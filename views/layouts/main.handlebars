@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Сказка — педагогический отряд</title>
+  <link rel="stylesheet" href="/css/normalize.css">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div class="bg">
+    <div class="container">
+      <div class="header">
+        <a href="/">
+          <div class="header__logo">СПО"Сказка"</div>
+        </a>
+      </div>
+      <div class="body">
+        <div class="menu">
+          <div class="menu__enter">
+            <span class="menu__enter--text"><a href="#" onclick="open_window_enter()">вход</a></span>
+            <span class="menu__enter--reg"><a href=# onclick="open_window_reg()">регистрация</a></span>
+          </div>
+          <div class="menu__nav">
+            <span><a href="event">мероприятия</a></span>
+            <span><a href="album">альбом</a></span>
+            <span><a href="#">сообщения</a></span>
+            <span><a href="#">архив</a></span>
+          </div>
+        </div>
+        <div class="news-feed">
+
+          {{{body}}}
+
+          <div class="modal-window modal-window--enter hide" id="enter">
+            <span>Bход</span>
+            <form id="form__action">
+              <label for="nickname">
+              <input type="text" id="nickname" name="nickname" placeholder="логин">
+            </label>
+              <label for="password">
+              <input type="password" id="password" name="password" placeholder="пароль">
+           <br/><br/>
+     <div class="btn">войти</div>
+            </label>
+            </form>
+          </div>
+          <div class="modal-window modal-window--reg hide" id="reg">
+            <span>Регистрация</span>
+            <form action="#" id="form__reg">
+              <label for="name">
+              <input type="text" id="name" name="name" placeholder="Имя">
+            </label>
+              <label for="lastname">
+              <input type="text" id="lastname" name="lastname" placeholder="Фамилия">
+            </label>
+              <label for="nickname">
+              <input type="text" id="nickname" name="nickname" placeholder="логин">
+            </label>
+              <label for="e-mail">
+              <input type="email" id="e-mail" name="e-mail" placeholder="e-mail">
+            </label>
+              <label for="password">
+              <input type="password" id="password" name="password" placeholder="пароль">
+            </label>
+              <label for="password2">
+              <input type="password" id="password2" name="password2" placeholder="повторите пароль">
+            <br/><br/>
+     <div class="btn btn--reg">зарегистрироваться</div>
+
+            </label>
+            </form>
+          </div>
+          <div class="dark hide" id="dark" onclick="close_window()">
+          </div>
+        </div>
+      </div>
+      <script src="/js/main.js"></script>
+</body>
+
+</html>
