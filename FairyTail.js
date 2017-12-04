@@ -1,4 +1,4 @@
-var fortune = require('/lib/fortune.js');
+var fortune = require('./lib/fortune.js');
 
 var express = require('express');
 
@@ -26,7 +26,7 @@ app.get('/event', function (req, res) {
 });
 
 app.get('/cookie-fortune', function (req, res) {
-  res.render('fortune', { fortune.getFortune() });
+  res.render('fortune', { fortune: fortune.getFortune() });
 });
 
 //Пользовательская страница 404

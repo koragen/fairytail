@@ -6,10 +6,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "koragen",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2",
     "express-handlebars": "^3.0.0"
-  }
+  },
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koragen/fairytail.git"
+  },
+  "bugs": {
+    "url": "https://github.com/koragen/fairytail/issues"
+  },
+  "homepage": "https://github.com/koragen/fairytail#readme"
 }
