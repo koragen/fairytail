@@ -13,7 +13,7 @@ app.set('port', process.env.PORT || 3000);
 
 app.use(express.static(__dirname + '/public'));
 
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
   res.locals.showTests = app.get('env') !== 'production' &&
     req.query.test === '1';
     next();
@@ -21,6 +21,13 @@ app.use(function (req, res, next) {
 
 app.get('/', function (req, res) {
   res.render('index');
+});
+
+app.get('/about', function(req, res) {
+  res.render('about', {
+    fortune: fortune.getFortune(),
+    pageTestScript: '/qa/tests-about.js'
+  });
 });
 
 app.get('/album', function (req, res) {
@@ -31,9 +38,6 @@ app.get('/event', function (req, res) {
   res.render('event');
 });
 
-app.get('/cookie-fortune', function (req, res) {
-  res.render('fortune', { fortune: fortune.getFortune() });
-});
 
 //Пользовательская страница 404
 app.use(function (req, res) {

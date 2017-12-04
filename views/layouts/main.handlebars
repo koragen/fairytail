@@ -9,6 +9,7 @@
   {{/if}}
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/style.css">
+  <script src="//code.jquery.com/jquery-2.0.2.min.js"></script>
 </head>
 
 <body>
@@ -81,6 +82,7 @@
       </div>
       <script src="/js/main.js"></script>
       {{#if showTests}}
+        <div id="mocha"></div>
         <script src="/vendor/mocha.js"></script>
         <script src="/vendor/chai.js"></script>
         <script>
@@ -89,8 +91,10 @@
         </script>
         <script src="/qa/tests-global.js"></script>
         {{#if pageTestScript}}
-          <script src="{{pageTestScript}}"</script>
+          <script src="{{pageTestScript}}" </script>
+            {{/if}}
+              <script>mocha.run();</script>
         {{/if}}
-      {{/if}}
 </body>
+
 </html>
