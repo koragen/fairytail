@@ -4,6 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>Сказка — педагогический отряд</title>
+  {{#if showTests}}
+    <link rel="stylesheet" href="/vendor/mocha.css">
+  {{/if}}
   <link rel="stylesheet" href="/css/normalize.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -37,11 +40,7 @@
             <span>Bход</span>
             <form id="form__action">
               <label for="nickname">
-<<<<<<< HEAD
               <input type="text" id="nickname" name="nickname" placeholder="логин" autofocus>
-=======
-              <input type="text" id="nickname" name="nickname" placeholder="логин">
->>>>>>> a53f649990eff716213cbc0f5b6b6235838dbd48
             </label>
               <label for="password">
               <input type="password" id="password" name="password" placeholder="пароль">
@@ -54,11 +53,7 @@
             <span>Регистрация</span>
             <form action="#" id="form__reg">
               <label for="name">
-<<<<<<< HEAD
               <input type="text" id="name" name="name" placeholder="Имя" autofocus>
-=======
-              <input type="text" id="name" name="name" placeholder="Имя">
->>>>>>> a53f649990eff716213cbc0f5b6b6235838dbd48
             </label>
               <label for="lastname">
               <input type="text" id="lastname" name="lastname" placeholder="Фамилия">
@@ -85,6 +80,17 @@
         </div>
       </div>
       <script src="/js/main.js"></script>
+      {{#if showTests}}
+        <script src="/vendor/mocha.js"></script>
+        <script src="/vendor/chai.js"></script>
+        <script>
+          mocha.ui('tdd');
+          var assert = chai.assert;
+        </script>
+        <script src="/qa/tests-global.js"></script>
+        {{#if pageTestScript}}
+          <script src="{{pageTestScript}}"</script>
+        {{/if}}
+      {{/if}}
 </body>
-
 </html>
